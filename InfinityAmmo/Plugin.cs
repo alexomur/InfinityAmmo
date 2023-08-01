@@ -42,6 +42,8 @@ namespace InfinityAmmo
 
         private void UnregisterEvents()
         {
+            Player.Dying -= _handlers.OnDying;
+            Player.ReloadingWeapon -= _handlers.OnReloadingWeapon;
             _handlers = null;
         }
     }
