@@ -7,27 +7,12 @@ using PlayerRoles;
 namespace InfinityAmmo
 {
     public class EventHandlers
-    {
-        
-        private bool IsPlaying(Player player)
+    { public void OnReloadingWeapon(ReloadingWeaponEventArgs ev)
         {
-            if (player.Role == RoleTypeId.None || player.Role == RoleTypeId.Overwatch ||
-                player.Role == RoleTypeId.Spectator)
-            {
-                return false;
-            }
+            
+            if (ev.Firearm.Type == ItemType.ParticleDisruptor) return;
 
-            if (!player.IsConnected || !player.IsVerified)
-            {
-                return false;
-            }
-
-            return true;
-        }
-        
-        public void OnReloadingWeapon(ReloadingWeaponEventArgs ev)
-        {
-            if (ev.IsAllowed)
+                if (ev.IsAllowed)
             {
                 ev.Player.SetAmmo(ev.Firearm.AmmoType, Convert.ToUInt16(ev.Firearm.MaxAmmo));
             }
