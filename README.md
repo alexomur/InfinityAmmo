@@ -1,5 +1,5 @@
 # InfinityAmmo
-Gives all players infinite ammo.
+EXILED SCP:SL Plugin that gives all players infinite ammo.
 
 # Config
 ```
