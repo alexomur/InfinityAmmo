@@ -1,3 +1,5 @@
+# OUTDATED
+
 # InfinityAmmo
 EXILED SCP:SL Plugin that gives all players infinite ammo.
 
