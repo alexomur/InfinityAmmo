@@ -1,18 +1,22 @@
 using System;
 using Exiled.API.Enums;
-using Exiled.API.Features;
 using Exiled.Events.EventArgs.Player;
-using PlayerRoles;
 
 namespace InfinityAmmo
 {
     public class EventHandlers
-    { public void OnReloadingWeapon(ReloadingWeaponEventArgs ev)
+    { 
+        public void OnReloadingWeapon(ReloadingWeaponEventArgs ev)
         {
-            
-            if (ev.Firearm.Type == ItemType.ParticleDisruptor) return;
 
-                if (ev.IsAllowed)
+            if (ev.Firearm.FirearmType == FirearmType.ParticleDisruptor)
+            {
+                if (Plugin.Instance.Config.InfParticleDisruptor) 
+                    ev.Firearm.Ammo = 6;
+                return;
+            }
+
+            if (ev.IsAllowed)
             {
                 ev.Player.SetAmmo(ev.Firearm.AmmoType, Convert.ToUInt16(ev.Firearm.MaxAmmo));
             }
