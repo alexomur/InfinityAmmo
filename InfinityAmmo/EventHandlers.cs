@@ -18,8 +18,11 @@ namespace InfinityAmmo
 
         public void OnShot(ShotEventArgs ev)
         {
-            if (ev.Firearm.Type != ItemType.ParticleDisruptor) 
+            if (ev.Firearm.Type != ItemType.ParticleDisruptor)
+            {
+                ev.Player.SetAmmo(ev.Firearm.AmmoType, 1);
                 return;
+            }
             
             Log.Debug("Disruptor Shot!");
                 
