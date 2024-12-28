@@ -1,4 +1,4 @@
-# UPDATED TO EXILED 8.6.0
+# UPDATED TO EXILED 9.1.1
 
 # InfinityAmmo
 EXILED SCP:SL Plugin that gives all players infinite ammo.
