@@ -38,12 +38,16 @@ namespace InfinityAmmo
             _handlers = new EventHandlers();
             Player.Dying += _handlers.OnDying;
             Player.ReloadingWeapon += _handlers.OnReloadingWeapon;
+            Player.ChangingItem += _handlers.OnChangingItem;
+            Player.Shot += _handlers.OnShot;
         }
 
         private void UnregisterEvents()
         {
             Player.Dying -= _handlers.OnDying;
             Player.ReloadingWeapon -= _handlers.OnReloadingWeapon;
+            Player.ChangingItem -= _handlers.OnChangingItem;
+            Player.Shot -= _handlers.OnShot;
             _handlers = null;
         }
     }
