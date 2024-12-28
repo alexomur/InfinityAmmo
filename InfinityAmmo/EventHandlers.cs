@@ -1,9 +1,6 @@
-using System;
 using Exiled.API.Enums;
 using Exiled.API.Features;
-using Exiled.API.Features.Pickups;
 using Exiled.Events.EventArgs.Player;
-using InventorySystem.Items.Firearms;
 using Firearm = Exiled.API.Features.Items.Firearm;
 
 namespace InfinityAmmo
@@ -13,7 +10,7 @@ namespace InfinityAmmo
         public void OnReloadingWeapon(ReloadingWeaponEventArgs ev)
         {
             Log.Debug("Reloading!");
-            ev.Player.SetAmmo(ev.Firearm.AmmoType, Convert.ToUInt16(ev.Firearm.TotalMaxAmmo));
+            ev.Player.SetAmmo(ev.Firearm.AmmoType, (ushort)(ev.Firearm.TotalMaxAmmo + 1));
         }
 
         public void OnShot(ShotEventArgs ev)
