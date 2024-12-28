@@ -1,4 +1,5 @@
-﻿using Exiled.API.Features;
+﻿using System;
+using Exiled.API.Features;
 using Player = Exiled.Events.Handlers.Player;
 
 namespace InfinityAmmo
@@ -8,6 +9,10 @@ namespace InfinityAmmo
         public override string Author => "DrBright";
 
         public override string Name => "InfinityAmmo";
+
+        public override Version RequiredExiledVersion { get; } = new(9, 1, 1);
+
+        public override Version Version { get; } = new(2, 1, 0);
 
         public override string Prefix => Name;
 
